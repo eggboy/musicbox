@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: musicbox
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  datasource:
+    initialization-mode: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  pattern:
+    file: "%clr(%5p) %clr([${spring.application.name:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-B3-ParentSpanId:-},%X{X-Span-Export:-}]){yellow}"
