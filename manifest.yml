@@ -1,0 +1,10 @@
+---
+applications:
+- name: musicbox
+  memory: 1G
+  instances: 1
+  path: ./target/musicbox-0.0.1-SNAPSHOT.jar
+  env:
+    SPRING_PROFILES_ACTIVE: dev
+  services:
+    - session-redis
